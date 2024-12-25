@@ -1,0 +1,91 @@
+@use '../util' as u;
+
+.header{
+    justify-content: space-between;
+    max-width: u.rem(1200);
+    margin-inline: auto;
+
+    @include u.breakpointUp(medium) {
+        padding-block: u.rem(8);
+    }
+
+    @include u.breakpoint(small) {
+        padding: u.rem(0);
+    }
+
+    &__logo{
+        gap: u.rem(12);
+    }
+
+    &__logo-name{
+        pointer-events: none;
+        color: var(--primary-blue);
+    }
+
+    &__logo-image{
+        img{
+            width: 40px;
+        }
+    }
+
+    &__primary-nav-list{
+        a{
+            
+            @include u.breakpointUp(medium) {
+                position: relative;
+                color: var(--primary-blue);
+    
+                &::after{
+                    content: '';
+                    width: 0;
+                    height: u.rem(3);
+                    background: var(--primary-blue);
+                    position: absolute;
+                    bottom: u.rem(-4);
+                    left: 0;
+                    transition: .3s ease-in-out;
+    
+                }
+    
+                &:hover::after{
+                    width: 100%;
+                }
+                
+            }
+        }
+        
+        @include u.breakpointUp(medium) {
+            gap: u.rem(20);
+
+        }
+    }
+
+    &__menu{
+        cursor: pointer;
+        transition: .3s ease-in-out;
+
+        &.closeMenu:hover{
+            transform: scale(1.5);
+        }
+
+        @include u.breakpointUp(medium) {
+            display: none;
+        }
+    }
+
+}
+
+#header.active{
+    position: fixed;
+    background: var(--white);
+    box-shadow: u.rem(0) u.rem(2) u.rem(6) hsl(from var(--copy-blue) h s l / .5);
+    width: 100%;
+    max-width: unset;
+    z-index: 888;
+    animation: slideIn 0.5s ease forwards;
+}
+
+@keyframes slideIn {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(0); }
+}

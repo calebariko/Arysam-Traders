@@ -1,0 +1,18 @@
+@use '../util' as u;
+
+.cta{
+    &__content{
+        padding-block: u.rem(40);
+    }
+
+    &__text{
+        display: grid;
+        gap: u.rem(20);
+    }
+
+    &__title{
+        color: var(--primary-blue);
+    }
+
+    
+}

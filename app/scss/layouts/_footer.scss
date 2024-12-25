@@ -1,0 +1,100 @@
+@use '../util' as u;
+
+.footer{
+
+    @include u.breakpointUp(large) {
+        border-top-right-radius: u.rem(100);
+    }
+
+    &__disclaimer-content{
+        color: var(--very-grayish-blue);
+        padding-block: u.rem(20);
+        border-bottom: 1px solid hsl(from var(--very-grayish-blue) h s l / .6);
+    }
+
+    &__socials{
+        justify-content: center;
+        flex-direction: column;
+        gap: u.rem(16);
+        padding-block: u.rem(32);
+    }
+
+    &__contact{
+        gap: u.rem(14);
+
+        a{
+            color: var(--accent-yellow);
+            transition: .3s ease-in-out;
+            
+            &:hover{
+                color: var(--very-grayish-blue);
+            }
+        }
+
+
+        @include u.breakpoint(small) {
+            flex-direction: column;
+            gap: u.rem(6);
+        }
+    }
+
+    &__social-links{
+        gap: u.rem(14);
+    }
+
+    &__social-link-icon{
+        transition: .3s ease-in-out;
+
+        path{
+            fill: var(--accent-yellow);
+        }
+
+        &:hover{
+            transform: translateY(u.rem(-6));
+        }
+
+        &--youtube{
+            &:hover{
+                path{
+                    fill: var(--youtube-red);
+                }
+            }
+        }
+
+        &--facebook{
+            &:hover{
+                path{
+                    fill: var(--white);
+                }
+            }
+        }
+
+        &--whatsapp{
+            &:hover{
+                path{
+                    fill: var(--whatsapp-green);
+                }
+            }
+        }
+
+        &--tiktok{
+            &:hover{
+                path{
+                    fill: var(--black);
+                }
+            }
+        }
+
+        &--instagram{
+            &:hover{
+                path{
+                    fill: var(--instagram-pink);
+                }
+            }
+        }
+    }
+
+    &__copyright{
+        color: var(--grayish-blue);
+    }
+}

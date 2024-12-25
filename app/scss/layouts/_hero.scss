@@ -1,0 +1,73 @@
+@use '../util' as u;
+
+.hero{
+    background: hsl(from var(--primary-blue) h s l / .8);
+    height: calc(100vh - 90px);
+    background-image: url(../../../images/hero-img.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: darken;
+
+    border-bottom-left-radius: u.rem(100);
+
+    position: relative;
+
+    &--resources{
+        height: calc(100vh - 270px);
+    }
+
+    &__kicker{
+        color: hsl(from var(--grayish-blue) h s l / .4);
+        margin-bottom: u.rem(8);
+    }
+
+    &__page-title{
+        color: var(--white);
+        margin-bottom: u.rem(16);
+
+        &--yellow{
+            color: var(--accent-yellow);
+        }
+    }
+
+    &__page-description{
+        color: var(--very-grayish-blue);
+    }
+
+    &__info{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: u.rem(32);
+        margin-top: u.rem(28);
+
+        &--resources{
+            margin-top: unset;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        @include u.breakpointUp(medium) {
+            margin-top: unset;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+    }
+
+    &__btns{
+        display: flex;
+        flex-direction: column;
+        gap: u.rem(14);
+
+        @include u.breakpointUp(medium) {
+            flex-direction: row;
+        }
+    }
+}

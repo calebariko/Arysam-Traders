@@ -1,0 +1,14 @@
+@use '../util' as u;
+
+.light-shadow{
+    box-shadow: 1px 1px 5px 3px hsl(from var(--copy-blue) h s l / .15);
+
+    &--lighter{
+        box-shadow: 1px 1px 5px 3px hsl(from var(--copy-blue) h s l / .1);
+
+        @include u.breakpointUp(medium) {
+            box-shadow: -10px 1px 10px 4px hsl(from var(--copy-blue) h s l / .1);
+
+        }
+    }
+}

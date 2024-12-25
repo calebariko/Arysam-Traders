@@ -1,0 +1,27 @@
+@use '../util' as u;
+
+.container{
+    padding: u.rem(15) u.rem(15);
+    max-width: u.rem(1400);
+    margin-inline: auto;
+
+    &--header,
+    &--resources{
+        background: hsl(from var(--primary-blue) h s l / .1);
+    }
+
+    &--about,
+    &--courses{
+        padding: 0;
+    }
+
+    &--packages{
+        @include u.breakpoint(small) {
+            // padding: 0 0 u.rem(50);
+        }
+    }
+
+    &--footer{
+        background: hsl(from var(--primary-blue) h s l / .9);
+    }
+}

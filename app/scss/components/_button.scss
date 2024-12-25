@@ -1,0 +1,136 @@
+@use '../util' as u;
+
+.button{
+    border: 2px solid var(--accent-yellow);
+    border-radius: u.rem(8);
+    padding: u.rem(16) u.rem(32);
+
+    background: var(--accent-yellow);
+    color: var(--black);
+
+
+    cursor: pointer;
+    transition: all .4s ease-in-out;
+    
+    &:hover{
+        background: transparent;
+        color: var(--white);
+        transform: translateY(u.rem(-6));
+    }
+
+    &--transparent{
+        background: transparent;
+        color: var(--white);
+        letter-spacing: u.rem(1);
+
+        &:hover{
+            color: var(--black);
+            background: var(--accent-yellow);
+        }
+    }
+}
+
+.resources{
+    &__btn{
+        background: none;
+        color: var(--primary-blue);
+
+        &:hover{
+            color: var(--copy-blue);
+            background: var(--accent-yellow);
+        }
+    }
+}
+
+.bots{
+    &__btn{
+        padding: u.rem(4) u.rem(8);
+        color: var(--primary-blue);
+        border-radius: u.rem(4);
+
+        &:hover{
+            transform: initial;
+            background: var(--accent-yellow);
+        }
+
+        @include u.breakpointUp(medium){
+            padding: u.rem(8) u.rem(12);
+            border-radius: u.rem(8);
+        }
+
+        &.clicked{
+            background: var(--whatsapp-green);
+            border: 2px solid var(--whatsapp-green);
+        }
+    }
+}
+
+.courses{
+    &__btn{
+        text-transform: uppercase;
+
+        display: flex;
+        align-items: center;
+        gap: u.rem(8);
+
+        padding: u.rem(12) u.rem(24);
+
+        &:hover{
+            color: var(--black);
+
+
+            img{
+                transform: translateX(u.rem(8));
+            }
+
+            span{
+                transform: translateX(u.rem(-8));
+            }
+        }
+
+        img{
+            width: u.rem(24);
+            margin-bottom: u.rem(1);
+        }
+        
+        span,
+        img{
+            transition: .3s ease-in-out;
+        }
+    }
+}
+
+.cta{
+    &__btn{
+        width: max-content;
+        margin-inline: auto;
+
+        &:hover{
+            color: var(--primary-blue);
+        }
+    }
+}
+
+.packages{
+    &__btn{
+        background-color: var(--accent-yellow);
+        border: 3px solid var(--accent-yellow);
+
+        flex-basis: 50%;
+
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: bold;
+        color: var(--primary-blue);
+
+        transition: .3s ease-in-out;
+        cursor: pointer;
+        
+        &:hover{
+            background: transparent;
+            color: var(--white);
+            border-bottom-right-radius: u.rem(12);
+        }
+
+    }
+}

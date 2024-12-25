@@ -1,0 +1,71 @@
+@use '../util' as u;
+
+.title{
+    position: relative;
+    width: fit-content;
+    margin-inline: auto;
+
+    &::after,
+    &::before{
+        content: '';
+        width: u.rem(36);
+        height: u.rem(4);
+        position: absolute;
+        background-color: var(--primary-blue);
+        border-radius: u.rem(2);
+
+        @include u.breakpointUp(medium) {
+            width: u.rem(44);
+        }
+
+        @include u.breakpointUp(large) {
+            width: u.rem(56);
+        }
+    }
+
+    &::after{
+        right: 0;
+        bottom: u.rem(-4);
+    }
+
+    &::before{
+        top: u.rem(-4);
+    }
+
+    &--packages{
+        &::after,
+        &::before{
+            width: u.rem(60);
+        }
+    }
+
+    &--bots{
+        &::after,
+        &::before{
+            width: u.rem(36);
+        }
+    }
+
+    &--about{
+        &::after,
+        &::before{
+            width: u.rem(60);
+        }
+    }
+
+    &--courses{
+        &::after,
+        &::before{
+            width: u.rem(56);
+            background-color: var(--white);
+        }
+        
+        &::before{
+            top: u.rem(50);
+        }
+
+        &::after{
+            bottom: u.rem(50);
+        }
+    }
+}

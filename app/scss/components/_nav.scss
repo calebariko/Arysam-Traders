@@ -1,0 +1,67 @@
+@use '../util' as u;
+
+.priNav{
+
+    @include u.breakpoint(medium) {
+        position: fixed;
+        z-index: 999;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: 60%;
+
+        background: var(--primary-blue);
+
+        transform: translateX(100%);
+        transition: all .3s ease-in-out;
+
+        
+        li{
+            padding: u.rem(10) u.rem(20);
+            transition: .3s ease-in-out;
+            cursor: pointer;
+
+            &:first-child{
+                padding-top: u.rem(10);
+            }
+
+            &:hover{
+                background: hsl(from var(--black) h s l / .6);
+                border-radius: 100vw;
+
+                a{
+                    color: var(--accent-yellow);
+                    padding-left: u.rem(16);
+                }
+            }
+        }
+        
+        a{
+            color: var(--white);
+            transition: .3s ease-in-out;
+        }
+    }
+
+    .closeMenu{
+        margin-inline: u.rem(20);
+        margin-top: u.rem(28);
+
+        path{
+            fill: var(--white);
+        }
+    }
+}
+
+.header{
+    &__primary-nav-list{
+        @include u.breakpoint(medium) {
+            flex-direction: column;
+            align-items: initial;
+            padding-top: u.rem(20);
+        }
+    }
+}
+
+.active{
+    transform: translateX(0);
+}

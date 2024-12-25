@@ -1,0 +1,97 @@
+@use '../util' as u;
+
+.bots{
+    padding-block: u.rem(50);
+    scroll-margin-top: u.rem(150);
+
+
+    &__header{
+        margin-bottom: u.rem(8);
+        color: var(--primary-blue);
+        margin-bottom: u.rem(25);
+        width: max-content;
+        margin-inline: auto;
+        position: relative;
+        pointer-events: none;
+
+        &::after,
+        &::before{
+            content: '';
+            width: u.rem(36);
+            height: u.rem(4);
+            position: absolute;
+            background-color: var(--primary-blue);
+            border-radius: u.rem(2);
+
+            @include u.breakpointUp(medium) {
+                width: u.rem(44);
+            }
+    
+            @include u.breakpointUp(large) {
+                width: u.rem(56);
+            }
+        }
+
+        &::after{
+            right: 0;
+            bottom: u.rem(-4);
+        }
+
+        &::before{
+            top: u.rem(-4);
+        }
+
+    }
+    
+    &__bot{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: u.rem(14) u.rem(10);
+        border-radius: u.rem(8);
+        
+        transition: .2s ease-in-out;
+        
+        &:hover{
+            border-left: 2px solid hsl(from var(--primary-blue) h s l / .5);
+            border-right: 2px solid hsl(from var(--primary-blue) h s l / .5);
+            background: hsl(from var(--very-light-blue) h s l / .15);
+            cursor: default;
+        }
+
+        @include u.breakpointUp(medium) {
+            max-width: 800px;
+            margin-inline: auto;
+        }
+
+
+    }
+
+    &__bot-name{
+        color: var(--primary-blue);
+    }
+
+    &__tick{
+        width: u.rem(24);
+        display: none;
+
+        path{
+            fill: var(--white);
+        }
+    }
+
+    &__password{
+        text-align: center;
+        margin-top: u.rem(24);
+        letter-spacing: u.rem(2);
+        color: var(--primary-blue);
+        text-decoration: underline;
+        cursor: default;
+
+        span{
+            text-transform: uppercase;
+        }
+    }
+}
+
