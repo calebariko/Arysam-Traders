@@ -129,7 +129,7 @@ textarea:not([rows]) {
   --youtube-red: hsl(0, 100%, 50%);
   --facebook-blue: hsl(220, 44%, 51%);
   --whatsapp-green: hsl(154, 100%, 37%);
-  --instagram-pink: hsl(329, 81%, 63%);
+  --mail-pink: hsl(329, 81%, 63%);
 }
 
 :root {
@@ -446,8 +446,9 @@ textarea:not([rows]) {
   }
 }
 .footer__contact {
-  font-size: 0.875rem;
+  font-size: 1.5rem;
   text-align: center;
+  text-transform: capitalize;
 }
 .footer__copyright {
   text-align: center;
@@ -1122,27 +1123,14 @@ textarea:not([rows]) {
   padding-block: 1.25rem;
   border-bottom: 1px solid hsl(from var(--very-grayish-blue) h s l/0.6);
 }
+.footer__contact {
+  color: var(--very-grayish-blue);
+}
 .footer__socials {
   justify-content: center;
   flex-direction: column;
   gap: 1rem;
   padding-block: 2rem;
-}
-.footer__contact {
-  gap: 0.875rem;
-}
-.footer__contact a {
-  color: var(--accent-yellow);
-  transition: 0.3s ease-in-out;
-}
-.footer__contact a:hover {
-  color: var(--very-grayish-blue);
-}
-@media (max-width: 450px) {
-  .footer__contact {
-    flex-direction: column;
-    gap: 0.375rem;
-  }
 }
 .footer__social-links {
   gap: 0.875rem;
@@ -1168,8 +1156,8 @@ textarea:not([rows]) {
 .footer__social-link-icon--tiktok:hover path {
   fill: var(--black);
 }
-.footer__social-link-icon--instagram:hover path {
-  fill: var(--instagram-pink);
+.footer__social-link-icon--mail:hover path {
+  fill: var(--mail-pink);
 }
 .footer__copyright {
   color: var(--grayish-blue);

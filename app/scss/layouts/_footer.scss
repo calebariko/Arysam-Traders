@@ -12,30 +12,15 @@
         border-bottom: 1px solid hsl(from var(--very-grayish-blue) h s l / .6);
     }
 
+    &__contact{
+        color: var(--very-grayish-blue);
+    }
+
     &__socials{
         justify-content: center;
         flex-direction: column;
         gap: u.rem(16);
         padding-block: u.rem(32);
-    }
-
-    &__contact{
-        gap: u.rem(14);
-
-        a{
-            color: var(--accent-yellow);
-            transition: .3s ease-in-out;
-            
-            &:hover{
-                color: var(--very-grayish-blue);
-            }
-        }
-
-
-        @include u.breakpoint(small) {
-            flex-direction: column;
-            gap: u.rem(6);
-        }
     }
 
     &__social-links{
@@ -85,10 +70,10 @@
             }
         }
 
-        &--instagram{
+        &--mail{
             &:hover{
                 path{
-                    fill: var(--instagram-pink);
+                    fill: var(--mail-pink);
                 }
             }
         }

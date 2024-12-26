@@ -82,4 +82,12 @@ buyBtns.forEach(buyBtn => {
 	})
 })
 
+function contactUs() {
+	const myPhoneNumber = "254117226215";
+	const myPresetMessage = `Hello, I am interested in learning more about the synthetic indices trading!`;
+	const myEncodedMessage = encodeURIComponent(myPresetMessage);
+	const myWhatsappLink = `https://wa.me/${myPhoneNumber}?text=${myEncodedMessage}`;
+	document.getElementById("contact-btn").href = myWhatsappLink;
+}
+
 
