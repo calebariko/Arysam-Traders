@@ -87,7 +87,9 @@ function contactUs() {
 	const myPresetMessage = `Hello, I am interested in learning more about the synthetic indices trading!`;
 	const myEncodedMessage = encodeURIComponent(myPresetMessage);
 	const myWhatsappLink = `https://wa.me/${myPhoneNumber}?text=${myEncodedMessage}`;
-	document.getElementById("contact-btn").href = myWhatsappLink;
+	window.open(myWhatsappLink);
 }
 
-
+function visitDeriv() {
+	window.open("https://track.deriv.com/_2wY5AZILittMjdsyM5hasGNd7ZgqdRLk/1/" , "_blank");
+}
