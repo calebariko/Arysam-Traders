@@ -58,3 +58,28 @@ downloadBtns.forEach(btn => {
 function toCourses() {
 	window.location.href = "courses.html";
 }
+
+const buyBtns = document.querySelectorAll('.packages__btn')
+
+buyBtns.forEach(buyBtn => {
+	buyBtn.addEventListener("click", e => {
+		// Your phone number in international format (no "+" or spaces)
+		const phoneNumber = "254117226215";
+
+		let packageType = e.target.dataset.package;
+
+		// Dynamically set the preset message
+		const presetMessage = `Hello, I am interested in the ${packageType} level package!`;
+
+		// Encode the message to ensure it's URL-safe
+		const encodedMessage = encodeURIComponent(presetMessage);
+
+		// Build the WhatsApp link dynamically
+		const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+		
+		// Attach the link to the button
+		e.target.href = whatsappLink;
+	})
+})
+
+
