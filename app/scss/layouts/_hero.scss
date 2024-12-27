@@ -9,6 +9,8 @@
     background-size: cover;
     background-blend-mode: darken;
 
+    animation: fade-up .8s;
+
     border-bottom-left-radius: u.rem(100);
 
     position: relative;

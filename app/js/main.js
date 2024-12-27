@@ -1,17 +1,15 @@
-
 // PRIMARY NAVIGATION - open and close toggle
 
-const primaryNav = document.getElementById('priNav');
-const openMenu = document.getElementById('openMenu');
-const closeMenu = document.getElementById('closeMenu');
+const primaryNav = document.getElementById("priNav");
+const openMenu = document.getElementById("openMenu");
+const closeMenu = document.getElementById("closeMenu");
 const overlay = document.querySelector("[data-overlay]");
 
-openMenu.addEventListener('click', () => {
-    primaryNav.classList.add("active");
-    overlay.classList.add("active");
+openMenu.addEventListener("click", () => {
+	primaryNav.classList.add("active");
+	overlay.classList.add("active");
 	document.body.style.overflow = "hidden";
-
-})
+});
 
 window.addEventListener("click", (e) => {
 	if (!openMenu.contains(e.target)) {
@@ -21,12 +19,11 @@ window.addEventListener("click", (e) => {
 	}
 });
 
-closeMenu.addEventListener('click', () => {
-    primaryNav.classList.remove('active')
-    overlay.classList.remove("active");
+closeMenu.addEventListener("click", () => {
+	primaryNav.classList.remove("active");
+	overlay.classList.remove("active");
 	document.body.style.overflow = "unset";
-
-})
+});
 
 // HEADER - position sticky on scroll
 
@@ -50,7 +47,7 @@ function contactUs() {
 	const myEncodedMessage = encodeURIComponent(myPresetMessage);
 
 	const myWhatsappLink = `https://wa.me/${myPhoneNumber}?text=${myEncodedMessage}`;
-	
+
 	window.open(myWhatsappLink);
 }
 
@@ -61,21 +58,6 @@ function visitDeriv() {
 	);
 }
 
-// BOTS - download functionality
-
-const downloadBtns = document.querySelectorAll('.bots__btn');
-
-downloadBtns.forEach(btn => {
-	btn.addEventListener('click', e => {
-		setInterval(() => {
-			
-			e.target.classList.add('clicked')
-			e.target.innerText = 'downloaded'
-			
-		}, 2000);
-	})
-})
-
 // COURSES
 
 // view course btn
@@ -84,10 +66,10 @@ function toCourses() {
 }
 
 // buy courses btns
-const buyBtns = document.querySelectorAll('.packages__btn')
+const buyBtns = document.querySelectorAll(".packages__btn");
 
-buyBtns.forEach(buyBtn => {
-	buyBtn.addEventListener("click", e => {
+buyBtns.forEach((buyBtn) => {
+	buyBtn.addEventListener("click", (e) => {
 		const phoneNumber = "254117226215";
 
 		let packageType = e.target.dataset.package;
@@ -97,8 +79,21 @@ buyBtns.forEach(buyBtn => {
 		const encodedMessage = encodeURIComponent(presetMessage);
 
 		const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-		
-		e.target.href = whatsappLink;
-	})
-})
 
+		e.target.href = whatsappLink;
+	});
+});
+
+// DOWNLOAD FUNCTIONALITY
+
+const downloadBotLinks = document.querySelectorAll(".bots__download-link");
+
+console.log(downloadBotLinks);
+
+downloadBotLinks.forEach((downloadBotLink) => {
+	const fileId = downloadBotLink.getAttribute("data-id");
+
+	const downloadLink = `https://drive.google.com/uc?export=download&id=${fileId}`;
+
+	downloadBotLink.href = downloadLink;
+});

@@ -3,6 +3,8 @@
 .course{
     padding-block: u.rem(50);
 
+    animation: fade-from-up 1s;
+
     @include u.breakpointUp(medium) {
         padding: u.rem(50);
     }

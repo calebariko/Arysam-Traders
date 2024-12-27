@@ -4,6 +4,7 @@
     justify-content: space-between;
     max-width: u.rem(1200);
     margin-inline: auto;
+    animation: fade-down .6s;
 
     @include u.breakpointUp(medium) {
         padding-block: u.rem(8);

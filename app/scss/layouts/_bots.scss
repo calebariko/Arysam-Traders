@@ -4,6 +4,8 @@
     padding-block: u.rem(50);
     scroll-margin-top: u.rem(150);
 
+    animation: fade-from-up 1s;
+
 
     &__header{
         margin-bottom: u.rem(8);
