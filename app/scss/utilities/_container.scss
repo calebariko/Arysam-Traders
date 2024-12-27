@@ -15,12 +15,6 @@
         padding: 0;
     }
 
-    &--packages{
-        @include u.breakpoint(small) {
-            // padding: 0 0 u.rem(50);
-        }
-    }
-
     &--footer{
         background: hsl(from var(--primary-blue) h s l / .9);
     }

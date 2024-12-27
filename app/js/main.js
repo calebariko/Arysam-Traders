@@ -1,5 +1,5 @@
 
-// PRIMARY NAVIGATION
+// PRIMARY NAVIGATION - open and close toggle
 
 const primaryNav = document.getElementById('priNav');
 const openMenu = document.getElementById('openMenu');
@@ -28,7 +28,7 @@ closeMenu.addEventListener('click', () => {
 
 })
 
-// HEADER
+// HEADER - position sticky on scroll
 
 const header = document.getElementById("header");
 
@@ -40,7 +40,28 @@ window.addEventListener("scroll", function () {
 	}
 });
 
-// BOTS
+// HERO BTNS
+
+function contactUs() {
+	const myPhoneNumber = "254117226215";
+
+	const myPresetMessage = `Hello, I am interested in learning more about the synthetic indices trading!`;
+
+	const myEncodedMessage = encodeURIComponent(myPresetMessage);
+
+	const myWhatsappLink = `https://wa.me/${myPhoneNumber}?text=${myEncodedMessage}`;
+	
+	window.open(myWhatsappLink);
+}
+
+function visitDeriv() {
+	window.open(
+		"https://track.deriv.com/_2wY5AZILittMjdsyM5hasGNd7ZgqdRLk/1/",
+		"_blank"
+	);
+}
+
+// BOTS - download functionality
 
 const downloadBtns = document.querySelectorAll('.bots__btn');
 
@@ -55,41 +76,29 @@ downloadBtns.forEach(btn => {
 	})
 })
 
+// COURSES
+
+// view course btn
 function toCourses() {
 	window.location.href = "courses.html";
 }
 
+// buy courses btns
 const buyBtns = document.querySelectorAll('.packages__btn')
 
 buyBtns.forEach(buyBtn => {
 	buyBtn.addEventListener("click", e => {
-		// Your phone number in international format (no "+" or spaces)
 		const phoneNumber = "254117226215";
 
 		let packageType = e.target.dataset.package;
 
-		// Dynamically set the preset message
 		const presetMessage = `Hello, I am interested in the ${packageType} level package!`;
 
-		// Encode the message to ensure it's URL-safe
 		const encodedMessage = encodeURIComponent(presetMessage);
 
-		// Build the WhatsApp link dynamically
 		const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 		
-		// Attach the link to the button
 		e.target.href = whatsappLink;
 	})
 })
 
-function contactUs() {
-	const myPhoneNumber = "254117226215";
-	const myPresetMessage = `Hello, I am interested in learning more about the synthetic indices trading!`;
-	const myEncodedMessage = encodeURIComponent(myPresetMessage);
-	const myWhatsappLink = `https://wa.me/${myPhoneNumber}?text=${myEncodedMessage}`;
-	window.open(myWhatsappLink);
-}
-
-function visitDeriv() {
-	window.open("https://track.deriv.com/_2wY5AZILittMjdsyM5hasGNd7ZgqdRLk/1/" , "_blank");
-}
