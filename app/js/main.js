@@ -97,3 +97,11 @@ downloadBotLinks.forEach((downloadBotLink) => {
 
 	downloadBotLink.href = downloadLink;
 });
+
+// COPYRIGHT YEAR
+
+const yearEl = document.getElementById('year')
+
+const year = new Date().getFullYear();
+
+yearEl.innerHTML = year;
