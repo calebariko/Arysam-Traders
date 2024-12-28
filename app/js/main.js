@@ -62,7 +62,7 @@ function visitDeriv() {
 
 // view course btn
 function toCourses() {
-	window.location.href = "courses.html";
+	window.location.href = "pages/courses.html";
 }
 
 // buy courses btns
